@@ -1,21 +1,21 @@
-# yanxuan
+## `FooterGuide`
 
-> A Vue.js project
+- 如何实现路由切换
+  - 首先定义路由
+  - 然后再定义点击方法，方法要传`$route.path`作为参数
+- 如何实现哪个路由被选中
+  - 首先要定义一个类(`on`)
+  - 然后再动态绑定类`:class"{on: isCurrent('path')}"`
 
-## Build Setup
+## `Home`
 
-``` bash
-# install dependencies
-npm install
+- 如何实现知道头部的导航选中哪一个
+  - 首先要有拿到所有列表项的`index`( 遍历的下标 )和当前是选中哪个列表项的活动下标`activeIndex`
+  - 判断`index`和`activeIndex`是否相等，如果相等，就给当前列表项添加一个类(`class`)
+  - 然后给每个列表项目添加点击事件，点击事件传入`index`
+  - 最后再在点击事件里面更新`activeIndex`为`index`
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+- `swiper`的指示器为什么不显示
+  - 进去`swiper`中文官网，点击 在线演示 的 基础演示
+  - 选中一个有指示器的演示，点击右上角的 在新窗口打开
+  - 右键检查，查看源代码，点击最下面的那个`<script>`标签

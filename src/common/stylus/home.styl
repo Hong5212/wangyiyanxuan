@@ -1,0 +1,68 @@
+/*头部*/
+.home-header
+  .logo-search
+    padding 0.3rem 0.16rem
+    display flex
+    align-items center
+    .logo
+      width 1.38rem
+      height 0.4rem
+      margin-right 0.2rem
+      background url("../../common/imgs/logo.png") no-repeat
+      background-size contain
+      background-position center
+      text-indent -9999px
+    .search
+      width 5.32rem
+      height 0.56rem
+      background-color #ededed
+      border-radius .10667rem
+      color #666
+      display flex
+      align-items center
+      justify-content center
+      .iconfont
+        margin-right 0.05rem
+  .header-tabs
+    height 100%
+    width 100%
+    overflow hidden
+    display flex
+    .tab
+      flex-shrink 0
+      flex-flow row nowrap
+      align-items center
+      justify-content center
+      z-index 1
+      text-align center
+      padding 0 0.4rem
+      > span
+        display inline-block
+        padding 0 0.35rem
+        line-height 0.6rem
+        text-align center
+        &.active
+          color #b4282d
+          border-bottom 0.01rem solid #b4282d
+
+/*轮播图*/
+.swiper-container
+  width 100%
+  height 100%
+  .swiper-wrapper
+    width 100%
+    height 100%
+    .swiper-slide
+      display flex
+      justify-content center
+      align-items flex-start
+      flex-wrap wrap
+      img
+        display block
+        width 100%
+        text-align center
+        padding-bottom 0.1rem
+  .swiper-pagination
+    > span.swiper-pagination-bullet-active
+      background #02a774
+
