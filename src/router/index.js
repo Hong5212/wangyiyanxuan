@@ -8,6 +8,7 @@ import Classify from '../pages/Classify/Classify'
 import ShopCart from '../pages/ShopCart/ShopCart'
 import Personal from '../pages/Personal/Personal'
 
+
 // 使用插件
 Vue.use(Router)
 
@@ -20,7 +21,7 @@ export default new Router({
     },*/
     {
       path: '/home',
-      component: Home
+      component: Home,
     },
     {
       path: '/detail',

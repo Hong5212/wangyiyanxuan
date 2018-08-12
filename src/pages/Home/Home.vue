@@ -22,9 +22,6 @@
         <div class="swiper-slide" v-for="(banner, index) in banners" :key="index">
           <img :src="banner.picUrl">
         </div>
-        <!--<div class="swiper-slide">
-          <img src="../../images/carousel/02.jpg">
-        </div>-->
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination"></div>
@@ -159,20 +156,68 @@
       </div>
       <div class="right-item">
         <div>
-          <img src="http://yanxuan.nosdn.127.net/aff8663a9899da2419d0fa16a5ab2624.png?imageView&quality=85&thumbnail=330x330" alt="">
+          <img
+            src="http://yanxuan.nosdn.127.net/a1a42111fd2f8bcaeaf321bcd62890ef.png?imageView&quality=85&thumbnail=330x330"
+            alt="">
         </div>
         <div class="price">
           <div class="price-now28">
-            <span class="rmb1">￥</span>
-            <span>139</span>
+            <span class="rmb1">￥</span><span>139</span>
           </div>
           <div class="price-origin28">
-            <span class="rmb2">￥</span>
-            <span class="t">169</span>
+            <span class="rmb2">￥</span><span class="t">169</span>
           </div>
         </div>
       </div>
     </div>
+
+    <!--福利社-->
+    <div class="sale">
+      <a href="javascript:;"></a>
+    </div>
+
+    <!--专题精选-->
+    <div class="indexFloor choice">
+      <div class="hd">
+        <a class="more" href="javascript:;">
+          <span>专题精选</span>
+          <i class="iconfont icon-yuanjiantou1"></i>
+        </a>
+      </div>
+      <div class="indexTopics-slide">
+        <ul class="list">
+          <li class="item" v-for="(item,index) in home.topicList" :key="index">
+            <a class="imgWrap" href="javascript:;">
+              <img :src="item.itemPicUrl" alt="">
+            </a>
+            <div class="line1">
+
+              <h4 class="title">{{item.title}}</h4>
+              <span class="price"><span>{{item.priceInfo}}元起</span></span>
+              <div class="desc">{{item.subtitle}}</div>
+            </div>
+          </li>
+          <!--<li class="item">
+            <a class="imgWrap" href="javascript:;">
+              <img
+                src="http://yanxuan.nosdn.127.net/2f49b6ded76919ac7894b02fc9347410.jpg?imageView&thumbnail=575y322&enlarge=1&quality=75"
+                alt="">
+            </a>
+            <div class="line1">
+              <h4 class="title">青汁兑蜂蜜, 轻盈又甜蜜</h4>
+              <span class="price">
+                  <span>129</span>
+                  <span>元起</span>
+                </span>
+              <div class="desc">每天来杯青汁蜂蜜水，给生活添一点甜蜜</div>
+            </div>
+          </li>-->
+        </ul>
+      </div>
+    </div>
+
+    <!--商品列表-->
+    <GoodGrid :goodGrides="home.cateList"/>
   </div>
 </template>
 <script>
@@ -181,6 +226,7 @@
   import Swiper from 'swiper'
 
   import '../../common/stylus/home.styl'
+  import GoodGrid from '../../components/GoodGrid/GoodGrid'
 
   export default {
     data() {
@@ -229,6 +275,10 @@
             scrollX: true,
             click: true
           })
+          new BScroll('.indexTopics-slide', {
+            scrollX: true,
+            click: true
+          })
         })
       })
 
@@ -238,6 +288,10 @@
       active(index) {
         this.activeIndex = index
       }
+    },
+
+    components: {
+      GoodGrid
     }
   }
 </script>
