@@ -1,7 +1,8 @@
 import {
   RECEIVE_DATA,
   RECEIVE_BANNER,
-  RECEIVE_HOME
+  RECEIVE_HOME,
+  RECEIVE_DETAIL
 } from './mutaton-types'
 
 export default{
@@ -15,6 +16,10 @@ export default{
 
   [RECEIVE_HOME](state, {home}){
     state.home = home
+  },
+
+  [RECEIVE_DETAIL](state, {detail}){
+    state.detail = detail
   }
 }
 

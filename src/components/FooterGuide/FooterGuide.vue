@@ -59,7 +59,7 @@
   @import "../../common/stylus/mixins.styl"
 
   .footer_guide // footer
-    top-border-1px(#fafafa)
+    top-border-1px(#ccc)
     position fixed
     z-index 100
     left 0

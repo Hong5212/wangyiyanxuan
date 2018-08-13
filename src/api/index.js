@@ -9,3 +9,6 @@ export const reqBanner = () => ajax('/banner')
 
 //获取home数据
 export const reqHome = () => ajax('/home')
+
+//获取 识物 数据
+export const reqDetail = () => ajax('/detail')

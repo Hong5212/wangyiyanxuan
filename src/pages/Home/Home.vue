@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!--头部-->
     <div class="home-header">
       <div class="logo-search">
         <a class="logo">网易严选</a>
@@ -15,7 +16,6 @@
         </div>
       </div>
     </div>
-
     <!--轮播图-->
     <div class="swiper-container">
       <div class="swiper-wrapper">
@@ -134,7 +134,6 @@
         </ul>
       </div>
     </div>
-
     <!--严选限时购-->
     <div class="indexFlash">
       <div class="left-item">
@@ -170,12 +169,10 @@
         </div>
       </div>
     </div>
-
     <!--福利社-->
     <div class="sale">
       <a href="javascript:;"></a>
     </div>
-
     <!--专题精选-->
     <div class="indexFloor choice">
       <div class="hd">
@@ -215,7 +212,6 @@
         </ul>
       </div>
     </div>
-
     <!--商品列表-->
     <GoodGrid :goodGrides="home.cateList"/>
   </div>

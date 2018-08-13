@@ -2,13 +2,15 @@
 import {
   RECEIVE_DATA,
   RECEIVE_BANNER,
-  RECEIVE_HOME
+  RECEIVE_HOME,
+  RECEIVE_DETAIL
 } from './mutaton-types'
 
 import {
   reqData,
   reqBanner,
-  reqHome
+  reqHome,
+  reqDetail
 } from "../api"
 // console.log(reqData);
 
@@ -45,6 +47,16 @@ export default {
       const home = result.home;
       // console.log(home);
       commit(RECEIVE_HOME, {home})
+    }
+    cb && cb()
+  },
+
+  // 异步获取 识物模块 的数据
+  async getDetail({commit}, cb){
+    const result = await reqDetail();
+    if(result.code === 0){
+      const detail = result.detail;
+      commit(RECEIVE_DETAIL, {detail})
     }
     cb && cb()
   }
