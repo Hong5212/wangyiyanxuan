@@ -14,21 +14,55 @@
     <!--左侧导航-->
     <div class="m-cateNavVertWrap">
       <ul class="m-cateNavVert">
-        <li class="item">
-          <a class="txt" href="javascript:;">推荐专区</a>
+        <li class="item" v-for="(category, index) in categories":key="index"
+            :class="activeIndex === index ? 'active': ''" @click=active(index)>
+          <a class="txt" href="javascript:;">{{category.name}}</a>
         </li>
       </ul>
     </div>
+    <!--右侧列表-->
+    <ListItem :categories="categories" :activeIndex="activeIndex"/>
   </div>
 
 </template>
 
 <script>
-  // import '../../common/stylus/mixins.styl'
+  import {mapState} from 'vuex'
+  import BScroll from 'better-scroll'
+
   import '../../common/stylus/calssify.styl'
+  import ListItem from '../../components/ListItem/ListItem'
 
   export default {
-    components: {}
+    data() {
+      return {
+        activeIndex: 0  // 活动的下标
+      }
+    },
+
+    mounted() {
+      this.$store.dispatch('getCategories', () => {
+        this.$nextTick(() => {
+          new BScroll('.m-cateNavVertWrap',{
+            click: true
+          })
+        })
+      })
+    },
+
+    methods: {
+      active(index){
+        this.activeIndex = index
+      }
+    },
+
+    computed: {
+      ...mapState(['categories'])
+    },
+
+    components: {
+      ListItem
+    }
   }
 </script>
 

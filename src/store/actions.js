@@ -1,16 +1,17 @@
-
 import {
   RECEIVE_DATA,
   RECEIVE_BANNER,
   RECEIVE_HOME,
-  RECEIVE_DETAIL
+  RECEIVE_DETAIL,
+  RECEIVE_NAV
 } from './mutaton-types'
 
 import {
   reqData,
   reqBanner,
   reqHome,
-  reqDetail
+  reqDetail,
+  reqNav
 } from "../api"
 // console.log(reqData);
 
@@ -57,6 +58,17 @@ export default {
     if(result.code === 0){
       const detail = result.detail;
       commit(RECEIVE_DETAIL, {detail})
+    }
+    cb && cb()
+  },
+
+  // 异步获取 分类页 的数据
+  async getCategories({commit}, cb){
+    const result = await reqNav();
+    if(result.code === 0){
+      const categories = result.categories;
+      // console.log(result);
+      commit(RECEIVE_NAV, {categories})
     }
     cb && cb()
   }

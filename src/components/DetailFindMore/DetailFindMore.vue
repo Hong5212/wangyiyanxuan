@@ -9,7 +9,7 @@
       <div class="content" v-for="(item,index) in detail.findMore">
         <div class="topicItem">
           <div class="imgContainer pic1">
-            <img :src="item.itemPicUrl" alt="左边大图片">
+            <img :src="item.itemPicUrl" alt="图片">
           </div>
           <!--<div class="right">
             <img src="//yanxuan.nosdn.127.net/14992514239860839.jpg?" alt="右边两个小图片">

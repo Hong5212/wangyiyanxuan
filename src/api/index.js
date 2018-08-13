@@ -10,5 +10,8 @@ export const reqBanner = () => ajax('/banner')
 //获取home数据
 export const reqHome = () => ajax('/home')
 
-//获取 识物 数据
+//获取 识物页 数据
 export const reqDetail = () => ajax('/detail')
+
+//获取 分类页 数据
+export const reqNav = () => ajax('/nav')
