@@ -1,7 +1,7 @@
 <template>
   <div>
-    <MaskLayer/>
-    <div v-show="false">
+    <MaskLayer v-if="isMaskLayer"/>
+    <div>
       <!--头部-->
       <div class="home-header">
         <div class="logo-search">
@@ -196,21 +196,6 @@
                 <div class="desc">{{item.subtitle}}</div>
               </div>
             </li>
-            <!--<li class="item">
-              <a class="imgWrap" href="javascript:;">
-                <img
-                  src="http://yanxuan.nosdn.127.net/2f49b6ded76919ac7894b02fc9347410.jpg?imageView&thumbnail=575y322&enlarge=1&quality=75"
-                  alt="">
-              </a>
-              <div class="line1">
-                <h4 class="title">青汁兑蜂蜜, 轻盈又甜蜜</h4>
-                <span class="price">
-                    <span>129</span>
-                    <span>元起</span>
-                  </span>
-                <div class="desc">每天来杯青汁蜂蜜水，给生活添一点甜蜜</div>
-              </div>
-            </li>-->
           </ul>
         </div>
       </div>
@@ -232,16 +217,16 @@
     data() {
       return {
         // goods: ['推荐', '居家', '鞋包配饰', '服装', '电器', '洗护', '饮食', '餐厨'],
-        activeIndex: 0 // 被选中的下标
+        activeIndex: 0, // 被选中的下标,
+        isMaskLayer: false
       }
     },
 
-    computed: {
-      ...mapState(['data', 'banners', 'home'])
-
-    },
-
     mounted() {
+      setTimeout(() => {
+        this.isMaskLayer = true
+      }, 300)
+
       // 请求后台获取home 头部nav数据
       this.$store.dispatch('getData', () => {
         this.$nextTick(() => {
@@ -288,10 +273,16 @@
 
     },
 
+    computed: {
+      ...mapState(['data', 'banners', 'home'])
+
+    },
+
     methods: {
       active(index) {
         this.activeIndex = index
-      }
+      },
+
     },
 
     components: {

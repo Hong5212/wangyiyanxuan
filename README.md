@@ -36,15 +36,15 @@
   - 就会抛出`Expected Array, got Object`( 预料是数组，获得是对象 )
   - 解决方法
     - 把`state`里面的初始值改为空数组
-   
-    
+
+
 - 使用`better-scroll`实现水平滑动，但是不能垂直滑动
   - 问题：可以水平滑动，但是水平滑动的区域不能上下滑动
   - 方法：在`BScroll`的配置对象里面添加个`eventPassthrough`
   - `eventPassthrough`的默认值是空字符串，可选值有`vertical`和`horizontal`
-  
-  
-    
+
+
+
 ## `register-login`
 
 - 怎样在其他页面显示`FooterGuide`( 底部导航 )，在注册登录页面不显示
@@ -53,3 +53,8 @@
   - 首先在需要显示或者不显示`FooterGuide`每一条路由对象里面配置`meta字段`
   - `meta`的值是一个对象，对象里面可以定义一个对应的属性名，属性值得布尔值得键值对
   - 然后在`App.vue`里面的组件标签写`v-show="this.$route.meta.对应的属性名"`
+
+- 遮罩层的关闭问题
+  - 给点击按钮添加点击事件
+  - 定义一个状态，值是布尔值，当点击按钮的时候，改变状态
+  - 给要隐藏的区域添加`v-if='设置的状态'`
