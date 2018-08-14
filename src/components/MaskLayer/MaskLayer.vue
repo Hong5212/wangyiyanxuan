@@ -22,6 +22,7 @@
             <div class="actCouponBtn">
               <span>领券立减￥34.00</span>
             </div>
+            <a class="linkBtn" href="javascript:;">查看更多特惠商品</a>
           </div>
         </div>
       </div>
