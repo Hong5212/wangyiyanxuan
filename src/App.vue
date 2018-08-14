@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <FooterGuide/>
+    <FooterGuide v-show="this.$route.meta.isShowFooterGuide"/>
   </div>
 </template>
 
@@ -20,4 +20,5 @@
     width 100%
     height 100%
     position relative
+
 </style>

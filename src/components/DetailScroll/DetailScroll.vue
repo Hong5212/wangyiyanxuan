@@ -27,7 +27,8 @@
     mounted() {
       new BScroll('.m-exploreChannels', {
         scrollX: true,
-        click: true
+        click: true,
+        eventPassthrough: 'vertical' // 垂直滑动(事件转移)
       })
     }
   }
