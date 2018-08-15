@@ -4,10 +4,7 @@ import router from './router'
 import store from './store'
 import './mock/mockServer'
 
-
 import 'swiper/dist/css/swiper.min.css'
-
-// Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({

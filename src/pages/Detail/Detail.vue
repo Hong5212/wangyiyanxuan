@@ -2,7 +2,7 @@
   <div class="detailWrap">
     <ShiwuHeader/>
     <!--轮播图-->
-    <div class="swiper-container" v-if="detail.banner">
+    <div class="swiper-container detLbt" v-if="detail.banner">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(item, index) in detail.banner" :key="index">
           <img :src="item.picUrl">
@@ -17,7 +17,6 @@
     <!--文章-->
     <DetailScroll :scroll="detail.column"/>
     <DetailItem :detail="detail"/>
-    <!--<DetailLook/>-->
     <DetailFindMore :detail="detail"/>
   </div>
 </template>
@@ -29,7 +28,6 @@
   import ShiwuHeader from '../../components/ShiwuHeader/ShiwuHeader'
   import DetailScroll from '../../components/DetailScroll/DetailScroll'
   import DetailItem from '../../components/DetailItem/DetailItem'
-  // import DetailLook from '../../components/DetailLook/DetailLook'
   import DetailFindMore from '../../components/DetailFindMore/DetailFindMore'
 
 
@@ -50,7 +48,6 @@
       ShiwuHeader,
       DetailScroll,
       DetailItem,
-      // DetailLook,
       DetailFindMore
     }
   }
@@ -59,7 +56,7 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .detailWrap
     background-color #f4f4f4
-    margin-bottom 3rem
+
   /*轮播图*/
     .swiper-container
       background-color #fff
@@ -113,5 +110,7 @@
               margin-top .05rem
 
 
+    .detLbt
+      padding-top .8rem
 </style>
 
